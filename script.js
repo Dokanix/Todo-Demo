@@ -17,7 +17,6 @@ const createButton = () => {
   const todo = document.createElement("div");
   todo.classList.add("todo");
   todos.append(todo);
-
   todo.addEventListener("focusout", function () {
     if (todo.querySelector("p").innerText == "") {
       todo.remove();
