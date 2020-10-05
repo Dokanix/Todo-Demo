@@ -18,8 +18,14 @@ const createButton = () => {
   todo.classList.add("todo");
   todos.append(todo);
 
+  todo.addEventListener("focusout", function () {
+    if (todo.querySelector("p").innerText == "") {
+      todo.remove();
+    }
+  });
+
   const task = document.createElement("p");
-  task.innerText = "A new task";
+  task.innerText = "";
   task.classList.add("task");
   task.addEventListener("focusout", function () {
     this.setAttribute("contenteditable", "false");
